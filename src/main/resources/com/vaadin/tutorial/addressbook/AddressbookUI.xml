@@ -1,0 +1,30 @@
+<!--
+    This is a declarative version of the Vaadin 7 SimpleAddressbook
+    example. In order to turn this XML file into Vaadin component
+    instances, an add-on called Clara is used.
+
+    Original SimpleAddressbook:
+    https://github.com/vaadin/addressbook
+
+    Clara add-on for Vaadin:
+    https://vaadin.com/addon/clara
+-->
+<HorizontalSplitPanel xmlns:l="urn:vaadin:parent">
+
+    <!-- Left side layout - the contact list -->
+    <VerticalLayout sizeFull="">
+        <Table id="contactList" selectable="true" immediate="true" sizeFull="" l:expandRatio="1.0" />
+
+        <!-- Controls in the footer -->
+        <HorizontalLayout width="100%">
+            <TextField id="searchField" inputPrompt="Search contacts" width="100%" l:expandRatio="1.0" textChangeEventMode="LAZY" />
+            <Button id="newContactButton" caption="New" />
+        </HorizontalLayout>
+    </VerticalLayout>
+
+    <!-- Right side layout - the editor -->
+    <FormLayout margin="true" visible="false" id="editorLayout">
+        <Button id="removeContactButton" caption="Remove this contact" />
+    </FormLayout>
+
+</HorizontalSplitPanel>
